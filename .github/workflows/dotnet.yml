@@ -23,3 +23,6 @@ jobs:
       run: dotnet build ECommerce.sln --no-restore
     - name: Test
       run: dotnet test ECommerce.sln --no-build --verbosity normal
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build . --file docker-compose.yml --tag my-image-name:$(date +%s)
