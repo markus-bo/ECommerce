@@ -30,7 +30,7 @@ namespace ECommerce.Api.Products.Tests
             var result = await productsProvider.GetProductsAsync();
 
             // Assert
-            Assert.True(result.IsSuccess);
+            Assert.False(result.IsSuccess);
             Assert.True(result.products.Any());
             Assert.Null(result.ErrorMessage);
         }
